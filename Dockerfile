@@ -7,7 +7,7 @@ RUN apt-get -y update \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
-COPY web/. /srv/ekko.dev
+COPY . /srv/ekko.dev
 
 WORKDIR /srv/ekko.dev
 
