@@ -1,4 +1,4 @@
-FROM node:lts-buster-slim AS builder
+FROM node:18-bookworm AS builder
 
 RUN apt-get -y update \
     && apt-get install -y git \
@@ -7,13 +7,13 @@ RUN apt-get -y update \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
+RUN corepack enable && corepack prepare yarn@stable --activate
+
 COPY . /srv/ekko.dev
 
 WORKDIR /srv/ekko.dev
 
-RUN yarn install
-
-RUN yarn build
+RUN yarn && yarn build-only
 
 FROM nginx:alpine
 COPY --from=builder /srv/ekko.dev/dist/. /usr/share/nginx/html/.

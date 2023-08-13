@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
-@import "variables";
+@import 'variables';
 
 * {
   margin: 0;
@@ -13,7 +13,7 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: rgba($black, 0.5)
+  background: rgba($black, 0.5);
 }
 
 *::-webkit-scrollbar-thumb {
@@ -21,7 +21,8 @@
   border-radius: 20px;
 }
 
-html, body {
+html,
+body {
   overflow: hidden;
   font-family: $share-tech-mono;
   background: $black;

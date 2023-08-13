@@ -145,7 +145,9 @@ export default defineComponent({
   border: 1px solid $primary;
   overflow: hidden;
   background: rgba($black, 0.8);
-  transition: opacity 250ms, height 250ms;
+  transition:
+    opacity 250ms,
+    height 250ms;
   &.maximized {
     position: fixed;
     top: 0;

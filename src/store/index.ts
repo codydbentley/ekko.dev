@@ -11,7 +11,7 @@ const mutations = {
     state.apps.push(markRaw(app))
   },
   term(state: System, appId: string) {
-    state.apps = state.apps.filter(app => {
+    state.apps = state.apps.filter((app) => {
       if (app.id !== appId) {
         return true
       }
