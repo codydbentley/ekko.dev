@@ -19,6 +19,6 @@ jobs:
       - name: Build
         run: DOCKER_BUILDKIT=1 docker build -f Dockerfile -t ekko-dot-dev .
       - name: Tag
-        run: docker tag eko-dot-dev registry.digitalocean.com/${{ vars.DOCR_NAME }}/ekko-dot-dev
+        run: docker tag ekko-dot-dev registry.digitalocean.com/ekko-dot-dev/ekko-dot-dev
       - name: Push
-        run: docker push registry.digitalocean.com/${{ vars.DOCR_NAME }}/ekko-dot-dev
+        run: docker push registry.digitalocean.com/ekko-dot-dev/ekko-dot-dev
